@@ -1,0 +1,2 @@
+# LeetCodeEasy
+This is the answer of some questions in LeetCode
