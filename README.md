@@ -13,3 +13,8 @@ Six answers are already done~
 > Python has to stimulate the structure of ListNode which I'm not fimiliar
 * NO.26 Remove Duplicates from Sorted Array
 > Have learned some new thing in this one !
+* NO.27 Remove Element
+> Another one about list.remove()!
+* NO.28 Implement strStr()
+> list[0:0] is []
+> str.find(str2,begin,end = len(str))
