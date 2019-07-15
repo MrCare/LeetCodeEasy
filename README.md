@@ -23,3 +23,6 @@ Six answers are already done~
 * NO.28 Implement strStr()
 > list[0:0] is []
 > str.find(str2,begin,end = len(str))
+* NO.35 Search Insert Position
+* NO.38 Count And Say
+> I use a subtle method to fix boundary problem in loops
