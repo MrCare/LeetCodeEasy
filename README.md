@@ -1,12 +1,7 @@
 # LeetCodeEasy
 This is the answer of some questions in LeetCode  
-<<<<<<< HEAD
 > I will try my best to update it !
-Ten answers are already done~
-=======
-> I will update it and try my best!
-Six answers are already done~
->>>>>>> 2e2d4aaae4ee91f2339b65a13b917158d6e93d1e
+12 answers are already done~
 * NO.1 Two Sum  
 * NO.7 Reverse Integer  
 * NO.9 Palindrome Number  
@@ -26,3 +21,5 @@ Six answers are already done~
 * NO.35 Search Insert Position
 * NO.38 Count And Say
 > I use a subtle method to fix boundary problem in loops
+* NO.53 Maximum Subarray (DP)
+> The first DP quiz
