@@ -1,7 +1,7 @@
 # LeetCodeEasy
 This is the answer of some questions in LeetCode  
 > I will try my best to update it !
-12 answers are already done~
+15 answers are already done~
 * NO.1 Two Sum  
 * NO.7 Reverse Integer  
 * NO.9 Palindrome Number  
@@ -23,3 +23,7 @@ This is the answer of some questions in LeetCode
 > I use a subtle method to fix boundary problem in loops
 * NO.53 Maximum Subarray (DP)
 > The first DP quiz
+* NO.58 Length of Last Word
+> range(len(s)-1,-1,-1) loop from the back direction
+* NO.66 Plus One
+* NO.67 Add Binary
