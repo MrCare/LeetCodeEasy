@@ -27,3 +27,6 @@ This is the answer of some questions in LeetCode
 > range(len(s)-1,-1,-1) loop from the back direction
 * NO.66 Plus One
 * NO.67 Add Binary
+* NO.237 Delete Node in a Linked List
+* NO.70 Climbing Stairs
+> Fibonacci sequence!
