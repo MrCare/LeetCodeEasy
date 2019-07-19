@@ -66,3 +66,6 @@ This is the answer of some questions in LeetCode
 
 > 遍历二叉树，迭代和递归！第一道DFS深度优先搜索题~
 
+* NO.121 Best Time to Buy and Sell Stock
+
+> 股票类第一题，双指针循环！一个记录最小cost一个记录当前profit
