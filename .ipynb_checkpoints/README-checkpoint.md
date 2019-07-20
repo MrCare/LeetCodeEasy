@@ -73,3 +73,5 @@ This is the answer of some questions in LeetCode
 * NO.292 Nim Game
 
 > Nim游戏，4的倍数先手必输，反之先手必赢
+
+* NO.344 Reverse String
