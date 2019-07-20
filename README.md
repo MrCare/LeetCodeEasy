@@ -69,3 +69,7 @@ This is the answer of some questions in LeetCode
 * NO.121 Best Time to Buy and Sell Stock
 
 > 股票类第一题，双指针循环！一个记录最小cost一个记录当前profit
+
+* NO.292 Nim Game
+
+> Nim游戏，4的倍数先手必输，反之先手必赢
