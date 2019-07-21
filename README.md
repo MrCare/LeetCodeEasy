@@ -4,7 +4,7 @@ This is the answer of some questions in LeetCode
 
 > I will try my best to update it !  
 
-18 answers are already done~  
+24 answers are already done~  
 
 * NO.1 Two Sum  
 
@@ -75,3 +75,9 @@ This is the answer of some questions in LeetCode
 > Nim游戏，4的倍数先手必输，反之先手必赢
 
 * NO.344 Reverse String
+
+* NO.557 Reverse Words in a String III
+
+> 字符串不可变，常见的操作只有切片和索引
+
+* NO.206 Reverse Linked List
