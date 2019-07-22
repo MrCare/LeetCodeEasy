@@ -4,9 +4,12 @@ This is the answer of some questions in LeetCode
 
 > I will try my best to update it !  
 
-24 answers are already done~  
+26 answers are already done~  
 
 * NO.1 Two Sum  
+
+> 暴力双循环  
+> 哈希表增加空间换取时间增速
 
 * NO.7 Reverse Integer  
 
@@ -34,8 +37,7 @@ This is the answer of some questions in LeetCode
 
 * NO.28 Implement strStr()
 
-> list[0:0] is []
-
+> list[0:0] is []  
 > str.find(str2,begin,end = len(str))
 
 * NO.35 Search Insert Position
@@ -81,3 +83,20 @@ This is the answer of some questions in LeetCode
 > 字符串不可变，常见的操作只有切片和索引
 
 * NO.206 Reverse Linked List
+
+* NO. 136 Single Number
+
+> 异或（^） 二进制数的异或运算有如下性质：
+
+```Python
+a ^ a = 0  
+a ^ 0 = a;  
+a ^ b ^ a = a ^ a ^ b
+```
+
+* NO.141 Linked List Cycle
+
+> 快慢指针判断环  
+> 哈希表判断环  
+> 置空法判断环  
+
