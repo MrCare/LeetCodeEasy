@@ -1184,3 +1184,173 @@ class Solution(object):
             return False
         return True  # 否则有环
 ```
+
+## NO.235 Lowest Common Ancestor of a Binary Search Tree
+
+题目：
+
+* Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”
+
+* Given binary search tree:  root = [6,2,8,0,4,7,9,null,null,3,5]
+
+题解：binary search tree
+
+* 特点是左子节点小于等于根节点；右子节点大于等于根节点；对于任意节点都适用
+
+* 第一种递归解法：时间复杂度与空间复杂度均为$O(n)$
+
+    * 递归地搜索整个树，如果两个子节点一左一右地分布在根节点左右，那么两个节点的最近祖先就是该根节点
+
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        parent_val = root.val              # Value of current node or parent node.
+        p_val = p.val                      # Value of p
+        q_val = q.val                      # Value of q
+        if p_val > parent_val and q_val > parent_val:            # If both p and q are greater than parent
+            return self.lowestCommonAncestor(root.right, p, q)
+        
+        elif p_val < parent_val and q_val < parent_val:          # If both p and q are lesser than parent  
+            return self.lowestCommonAncestor(root.left, p, q)
+        else:                                                    # We have found the split point, i.e. the LCA node.
+            return root
+```
+
+第二种方式是迭代：
+
+* 迭代可以用变量储存并更新可能用到的值，所以比递归更加节省空间，一般也会更快
+
+* 迭代需要固定循环次数
+
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        p_val = p.val                 # Value of p
+        q_val = q.val                 # Value of q
+        node = root                   # Start from the root node of the tree
+        while node:                   # Traverse the tree
+            parent_val = node.val     # Value of current node or parent node.
+            if p_val > parent_val and q_val > parent_val:    
+                # If both p and q are greater than parent
+                node = node.right
+            elif p_val < parent_val and q_val < parent_val:
+                # If both p and q are lesser than parent
+                node = node.left
+            else:
+                # We have found the split point, i.e. the LCA node.
+                return node
+```
+
+## NO.169 Majority Element
+
+题目：
+
+* Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+
+* You may assume that the array is non-empty and the majority element always exist in the array.
+
+题解：
+
+* 哈希表是第一个想到的，时间复杂度与空间复杂度均为$O(n)$，此题有多种解法，包括暴力法，分治法，随机法，这些算法要么时间复杂度更大，要么空间复杂度更大，综合考量哈希表法最好。
+
+
+```python
+class Solution:
+    def majorityElement(self, nums):
+        count = 0
+        candidate = None
+
+        for num in nums:
+            if count == 0:
+                candidate = num
+            count += (1 if num == candidate else -1)
+        return candidate
+a = Solution()
+a.majorityElement([3,2,3,2,2,4])
+```
+
+
+
+
+    2
+
+
+
+Python 导入 collections 模块中的 Counter 可以一行解决
+
+* Counter 这个是一个集合，键为列表的元素，值为元素的统计计数
+
+* max([x1,x2,...],key = default): key = 一个函数，max 首先将函数应用于list中的所有x，得到y的序列，并返回最大y对应的x
+
+
+```python
+import collections
+class Solution:
+    def majorityElement(self, nums) -> int:
+        counts = collections.Counter(nums)
+        return max(counts.keys(), key=lambda x: counts[x])
+      # return max(counts.keys(), key = counts.get) 效果一样
+a = Solution()
+a.majorityElement([3,2,3,2,2,4])
+```
+
+
+
+
+    2
+
+
+
+此题不得不提的就是一个时间复杂度为$O(n)$,空间复杂度为$O(1)$的投票算法，太牛逼了，思路如下：
+
+* 列表中大于 len(list)//2 的元素只有一个，这个就是我们要求的数，为了方便指代，给它一个名字叫做大众数
+
+* 如果把大众数设为1，其他数都设为-1，那么列表里所有元素之和为正数
+
+* 循环整个列表，初始化和为0，当和为0时，将下一个元素作为新的1，其他元素为-1
+    
+    * example:[7, 7, 5, 7, 5, 1 | 5, 7 | 5, 5, 7, 7 | 7, 7, 7, 7]
+
+    * 首先，下标为 0 的 7 被当做众数的第一个候选。在下标为 5 处，计数器会变回0 。所以下标为 6 的 5 是下一个众数的候选者。由于这个例子中 7 是真正的众数，所以通过忽略掉前面的数字，我们忽略掉了同样多数目的众数和非众数。因此， 7 仍然是剩下数字中的众数。
+
+
+```python
+class Solution:
+    def majorityElement(self, nums) -> int:
+            s = 0
+            for each in nums:
+                if s == 0:
+                    t = each
+                s += 1 if each == t else -1
+            return t
+a = Solution()
+a.majorityElement([3,2,3,2,2,4])
+```
+
+
+
+
+    2
+
+
+
+
+```python
+
+```
