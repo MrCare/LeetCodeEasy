@@ -108,3 +108,9 @@ a ^ b ^ a = a ^ a ^ b
 * NO.169 Majority Element
 
 > 这里有一个优秀算法：投票法，时间复杂度为$O(n)$,空间复杂度为$O(1)$
+
+* NO.122 Best Time to Buy and Sell Stock II
+
+> DP 第二题，动态规划最重要的一步是要确定状态是什么，然后写出状态转移方程
+
+* NO.217 Contains Duplicate

@@ -1350,7 +1350,57 @@ a.majorityElement([3,2,3,2,2,4])
 
 
 
+## NO.122 Best Time to Buy and Sell Stock II
+
+题目：
+
+* Say you have an array for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).
+
+* Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).
+
+题解：
+
+* 动态规划，状态转移方程：profit[i] = profit[i] + max(0,price[i] - price[i - 1])
+
 
 ```python
-
+class Solution:
+    def maxProfit(self, prices) -> int:
+        total = 0
+        for i in range(len(prices)-1):
+            s = prices[i + 1] - prices[i]
+            if s > 0:
+                total += s
+        return total
+a = Solution()
+a.maxProfit([7,1,5,3,6,4])
 ```
+
+
+
+
+    7
+
+
+
+## NO.217 Contains Duplicate
+
+题目：
+
+* Given an array of integers, find if the array contains any duplicates.Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
+
+
+```python
+class Solution:
+    def containsDuplicate(self, nums) -> bool:
+        return len(set(nums)) != len(nums)
+a = Solution()
+a.containsDuplicate([1,2,1])
+```
+
+
+
+
+    True
+
+
