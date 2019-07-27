@@ -1404,3 +1404,191 @@ a.containsDuplicate([1,2,1])
     True
 
 
+
+## NO.88 Merge Sorted Array
+
+题目：
+
+* Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
+
+* Note:
+
+    * The number of elements initialized in nums1 and nums2 are m and n respectively.
+    
+    * You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2.
+
+题解：
+
+* 最开始想到的就是列表相加后排序，具有$O(nlogn)$的时间复杂度，空间复杂度理论可以达到$O(1)$
+
+
+```python
+class Solution:
+    def merge(self, nums1, m: int, nums2, n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        nums1[:] = sorted(nums1[:m] + nums2)
+a = Solution()
+m = [2,1,3,0,0,0]
+n = [4,5,6]
+a.merge(m,3,n,3)
+m
+```
+
+
+
+
+    [1, 2, 3, 4, 5, 6]
+
+
+
+* 更好的方法是双指针法，时间复杂度与空间复杂度都是$O(n)$
+
+    * list.append()只能有一个参数
+    
+    * 尾部的逻辑也要考虑到！
+
+
+```python
+class Solution:
+    def merge(self, nums1, m: int, nums2, n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        i = 0
+        j = 0
+        k = []
+        for w in range(m+n):
+            if i == m:
+                k.append(nums2[j])
+                j += 1
+            elif j == n:
+                k.append(nums1[i])
+                i += 1
+            elif nums1[i] <= nums2[j]:
+                k.append(nums1[i])
+                i += 1
+            else:
+                k.append(nums2[j])
+                j += 1
+        nums1[:] = k
+a = Solution()
+m = [2,1,3,0,0,0]
+n = [4,5,6]
+a.merge(m,3,n,3)
+m               
+```
+
+
+
+
+    [2, 1, 3, 4, 5, 6]
+
+
+
+## NO.155 Min Stack
+
+题目：
+
+* Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+
+    * push(x) -- Push element x onto stack.
+    * pop() -- Removes the element on top of the stack.
+    * top() -- Get the top element.
+    * getMin() -- Retrieve the minimum element in the stack.
+
+题解：
+
+* 用 list 模拟 stack
+
+
+```python
+class MinStack:
+
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.var = []
+
+    def push(self, x: int) -> None:
+        self.var.append(x)
+
+    def pop(self) -> None:
+        self.var.pop()
+
+    def top(self) -> int:
+        return self.var[-1]
+
+    def getMin(self) -> int:
+        return min(self.var)
+
+
+# Your MinStack object will be instantiated and called as such:
+# obj = MinStack()
+# obj.push(x)
+# obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.getMin()
+```
+
+## NO.231 Power of Two
+
+题目：
+
+* Given an integer, write a function to determine if it is a power of two.
+
+题解：
+
+* 除2法
+
+
+```python
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        if n <= 0:
+            return False
+        else:
+            while n > 1:
+                if n%1 != 0:
+                    return False
+                else:
+                    n = n/2
+            return True
+a = Solution()
+a.isPowerOfTwo(16)
+```
+
+
+
+
+    True
+
+
+
+* 按位与 &
+
+    * 如果 n 是 2 的幂次，那么其最高位一定为1，其余为0
+  
+    * n-1 最高位为 0，其余位为 1
+  
+    * n&(n-1) 为 0
+
+
+```python
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        if n <= 0:
+            return False
+        return n&(n-1) == 0
+a = Solution()
+a.isPowerOfTwo(16)
+```
+
+
+
+
+    True
+
+

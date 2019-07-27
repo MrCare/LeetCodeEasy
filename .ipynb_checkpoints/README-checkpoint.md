@@ -114,3 +114,15 @@ a ^ b ^ a = a ^ a ^ b
 > DP 第二题，动态规划最重要的一步是要确定状态是什么，然后写出状态转移方程
 
 * NO.217 Contains Duplicate
+
+* NO.88 Merge Sorted Array
+
+> 归并排序，理清尾部的逻辑很重要！
+
+* NO.155 Min Stack
+
+> 用 list 模拟 stack
+
+* NO.231 Power of Two
+
+> 按位与的操作很巧妙
