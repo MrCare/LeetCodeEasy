@@ -126,3 +126,7 @@ a ^ b ^ a = a ^ a ^ b
 * NO.231 Power of Two
 
 > 按位与的操作很巧妙
+
+* NO.160 Intersection of Two Linked Lists
+
+> 双指针，8字法！
