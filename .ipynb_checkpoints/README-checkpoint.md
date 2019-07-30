@@ -130,3 +130,13 @@ a ^ b ^ a = a ^ a ^ b
 * NO.160 Intersection of Two Linked Lists
 
 > 双指针，8字法！
+
+# LeetCodeMedium
+
+* NO.8 String to Integer (atoi)
+
+> 一手贼溜的正则表达式
+
+* NO.15 3Sum
+
+> Two Sum 的升级版，必须用排序加对撞指针解决
