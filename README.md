@@ -154,3 +154,7 @@ a ^ b ^ a = a ^ a ^ b
 * NO.11 Container With Most Water
 
 > 双指针法加速，一次循环丢弃多余状态，体现了算法的威力！
+
+* NO.16 3Sum Closest
+
+> 排序 + 对撞指针 + 损失函数(目标函数)
