@@ -158,3 +158,11 @@ a ^ b ^ a = a ^ a ^ b
 * NO.16 3Sum Closest
 
 > 排序 + 对撞指针 + 损失函数(目标函数)
+
+* NO.23
+
+> 二分查找法，时间复杂度为$O(log_2n)$，空间复杂度最小可为$O(1)$
+
+> [二分查找法编程模版](https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/) 非常细致，值得详细钻研
+
+> Python 内置的`in`方法采用的应当就是二分查找
