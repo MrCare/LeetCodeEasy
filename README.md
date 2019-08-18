@@ -4,7 +4,7 @@ This is the answer of some questions in LeetCode
 
 > I will try my best to update it !  
 
-26 answers are already done~  
+41 answers are already done~  
 
 * NO.1 Two Sum  
 
@@ -131,6 +131,10 @@ a ^ b ^ a = a ^ a ^ b
 
 > 双指针，8字法！
 
+* NO.415 Add Strings
+
+> 模拟加法过程
+
 # LeetCodeMedium
 
 * NO.8 String to Integer (atoi)
@@ -159,10 +163,14 @@ a ^ b ^ a = a ^ a ^ b
 
 > 排序 + 对撞指针 + 损失函数(目标函数)
 
-* NO.23
+* NO.33
 
 > 二分查找法，时间复杂度为$O(log_2n)$，空间复杂度最小可为$O(1)$
 
 > [二分查找法编程模版](https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/) 非常细致，值得详细钻研
 
 > Python 内置的`in`方法采用的应当就是二分查找
+
+* NO.43 Multiply String
+
+> 模拟乘法过程，时间复杂度$O(m+n)$
