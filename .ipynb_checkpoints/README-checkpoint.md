@@ -4,7 +4,7 @@ This is the answer of some questions in LeetCode
 
 > I will try my best to update it !  
 
-41 answers are already done~  
+43 answers are already done~  
 
 * NO.1 Two Sum  
 
@@ -174,3 +174,7 @@ a ^ b ^ a = a ^ a ^ b
 * NO.43 Multiply String
 
 > 模拟乘法过程，时间复杂度$O(m+n)$
+
+* NO.46 Permutations(排列)
+
+> 回溯法，递归实现,时间复杂度略快于$O(n \times n!)$，慢于$O(n!)$，空间复杂度为$O(n!)$
